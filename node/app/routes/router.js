@@ -2,7 +2,16 @@ const express = require('express')
 const router = express.Router()
 const port = process.env.port || 3005
 
-const tables = [ 'artist']
+const tables = [ 
+    'album',
+    'apparel',
+    'artist', 
+    'candle', 
+    'label', 
+    'genre',
+    'product',
+    'user'
+]
 
 // .get()
 router.get('/', (req, res)=> {
@@ -10,11 +19,11 @@ router.get('/', (req, res)=> {
         'All Albums': `http://localhost:${port}/api/album`,
         'All Apparel': `http://locahost:${port}/api/apparel`,
         'All Artists': `http://localhost:${port}/api/artist`,
-        'All Candles': `http://localhost${port}/api/candle`,
+        'All Candles': `http://localhost:${port}/api/candle`,
         'All Genres': `http://localhost:${port}/api/genre`,
         'All Labels': `http://localhost:${port}/api/label`,
         'All Products': `http://localhost:${port}/api/product`,
-        'All Users': `http://localhost${port}/api/user`
+        'All Users': `http://localhost:${port}/api/user`
     })
 })
 
