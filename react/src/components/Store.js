@@ -1,4 +1,6 @@
-const Store =()=> {
+const Store =({ products })=> {
+
+    console.log(products)
 
     return (
         <h1>store</h1>

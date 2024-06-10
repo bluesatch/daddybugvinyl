@@ -107,3 +107,22 @@ CREATE TABLE album_to_genre (
     CONSTRAINT fk_album FOREIGN KEY (album_id) REFERENCES album (album_id),
     CONSTRAINT fk_genre FOREIGN KEY (genre_id) REFERENCES genre (genre_id)
 );
+
+ALTER TABLE album 
+    ADD COLUMN product_id TINYINT UNSIGNED NOT NULL;
+-- IMPORT DATA
+
+ALTER TABLE album
+    ADD FOREIGN KEY (product_id) REFERENCES product (product_id);
+
+ALTER TABLE apparel
+    ADD COLUMN product_id TINYINT UNSIGNED NOT NULL;
+
+ALTER TABLE apparel
+    ADD FOREIGN KEY (product_id) REFERENCES product (product_id);
+
+ALTER TABLE candle 
+    ADD COLUMN product_id TINYINT UNSIGNED NOT NULL;
+
+ALTER TABLE candle
+    ADD FOREIGN KEY (product_id) REFERENCES product (product_id);

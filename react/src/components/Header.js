@@ -14,12 +14,24 @@ const Header =()=> {
                         </h1>
                     </div>
                     <div className="col-md-6">
-                        <nav className="nav justify-content-end justify-content-sm-center">
-                            <Link to="/about">about</Link>
-                            <Link to="/store">store</Link>
-                            <Link to="/apparel">apparel</Link>
-                            <Link to="/candle">candles</Link>
-                            <Link to='/vinyl'>vinyl</Link>
+                        <nav className="top-nav">
+                            <ul className="nav justify-content-end">
+                                <li className="nav-item me-2">
+                                    <Link to="/about">about</Link>
+                                </li>
+                                <li className="nav-item me-2">
+                                    <Link to="/store">store</Link>
+                                </li>
+                                <li className="nav-item me-2">
+                                    <Link to="/apparel">apparel</Link>
+                                </li>
+                                <li className="nav-item me-2">
+                                    <Link to="/candle">candles</Link>
+                                </li>
+                                <li className="nav-item me-2">
+                                    <Link to='/vinyl'>vinyl</Link>
+                                </li>
+                            </ul>
                         </nav>
                     </div>
                 </div>

@@ -163,3 +163,11 @@ VALUES
 (8, 4), (8, 15), (8, 16),
 (9, 15), (9, 16), (9, 26),
 (10, 4), (10, 5);
+
+INSERT INTO apparel (apparel, color, size, price, imgUrl)
+VALUES 
+('t-shirt', 'black', 'l', 9.99, 'tshirtblack.jpeg'),
+('tank top one logo', 'white', 'l', 11.99, 
+'onelogotank.jpeg'),
+('tank top multi logo', 'white', 'l', 11.99, 'multilogotank.jpeg'),
+('crewneck sweatshirt', 'gray', 'l', 19.99, 'crewneckgray.jpeg');

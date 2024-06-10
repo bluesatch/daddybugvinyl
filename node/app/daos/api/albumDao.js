@@ -10,7 +10,7 @@ const albumDao = {
 
         con.execute(
             `SELECT al.album_id, al.serial_no, al.title, al.artist_id,
-            al.label_id, al.speed, al.sound, al.yr_released, al.size, al.price, al.rating, al.imgUrl, ar.firstName, ar.lastName, ar.band, ar.alias, l.label
+            al.label_id, al.speed, al.sound, al.yr_released, al.size, al.price, al.rating, al.imgUrl, al.product_id, ar.firstName, ar.lastName, ar.band, ar.alias, l.label
             FROM album al
             JOIN artist ar USING (artist_id)
             JOIN label l USING (label_id)

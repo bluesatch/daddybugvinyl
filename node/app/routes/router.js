@@ -17,7 +17,7 @@ const tables = [
 router.get('/', (req, res)=> {
     res.json({
         'All Albums': `http://localhost:${port}/api/album`,
-        'All Apparel': `http://locahost:${port}/api/apparel`,
+        'All Apparel': `http://localhost:${port}/api/apparel`,
         'All Artists': `http://localhost:${port}/api/artist`,
         'All Candles': `http://localhost:${port}/api/candle`,
         'All Genres': `http://localhost:${port}/api/genre`,
