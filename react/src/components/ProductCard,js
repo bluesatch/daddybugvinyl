@@ -1,0 +1,19 @@
+const ProductCard =()=> {
+
+    return (
+        <div className="col">
+            <div className="card product-card h-100">
+                <img src="https://via.placeholder.com/50x50" alt="placeholder img" className="img-fluid image card-img-top" />
+                <div className="card-body">
+                    <h3 className="card-title product-name text-capitalize">product name</h3>
+                    <p className="card-text">Price $price</p>
+                </div>
+                <footer className="card-footer">
+                <button className="btn btn-primary cart-btns text-capitalize">add to cart</button>
+                </footer>
+            </div>
+        </div>
+    )
+}
+
+export default ProductCard

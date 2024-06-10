@@ -4,6 +4,27 @@ const albumDao = {
 
     table: 'album',
 
+    findAlbums: (req, res, table)=> {
+        con.execute(
+            `SELECT al.album_id, al.serial_no, al.title, al.artist_id,
+            al.label_id, al.speed, al.sound, al.yr_released, al.size, al.price, al.rating, al.imgUrl, al.product_id, ar.firstName, ar.lastName, ar.band, ar.alias, l.label
+            FROM album al
+            JOIN artist ar USING (artist_id)
+            JOIN label l USING (label_id);`,
+            (error, rows)=> {
+                if (!error) {
+                    if (rows.length === 1) {
+                        res.json(...rows)
+                    } else {
+                        res.json(rows)
+                    }
+                } else {
+                    console.log('DAO ERROR: ', error)
+                }
+            }
+        )
+    },
+
     findById: (req, res, table)=> {
         
         const id = req.params.id 
