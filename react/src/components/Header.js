@@ -7,29 +7,47 @@ const Header =()=> {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
-                        <h1 className="branding text-capitalize text-sm-center">
-                            <Link to="/">
-                                daddy bug vinyl...(and more)
+                        <h1 className="branding text-capitalize text-center text-md-start">
+                            <Link to="/" style={{ textDecoration: 'none'}}>
+                                daddy bug vinyl...
+                                <span className="small fs-6">
+                                    (and more)
+                                </span>
                             </Link>
                         </h1>
                     </div>
                     <div className="col-md-6">
                         <nav className="top-nav">
-                            <ul className="nav justify-content-end">
+                            <ul className="nav justify-content-center justify-content-md-end">
                                 <li className="nav-item me-2">
-                                    <Link to="/about">about</Link>
+                                    <Link 
+                                        to="/about" 
+                                        style={{textDecoration: 'none', textTransform: 'capitalize'}}
+                                    >about</Link>
                                 </li>
                                 <li className="nav-item me-2">
-                                    <Link to="/store">store</Link>
+                                    <Link 
+                                        to="/store" 
+                                        style={{textDecoration: 'none', textTransform: 'capitalize'}}
+                                    >store</Link>
                                 </li>
                                 <li className="nav-item me-2">
-                                    <Link to="/apparel">apparel</Link>
+                                    <Link 
+                                        to="/apparel" 
+                                        style={{textDecoration: 'none', textTransform: 'capitalize'}}
+                                    >apparel</Link>
                                 </li>
                                 <li className="nav-item me-2">
-                                    <Link to="/candle">candles</Link>
+                                    <Link 
+                                        to="/candle" 
+                                        style={{textDecoration: 'none', textTransform: 'capitalize'}}
+                                    >candles</Link>
                                 </li>
                                 <li className="nav-item me-2">
-                                    <Link to='/vinyl'>vinyl</Link>
+                                    <Link 
+                                        to='/vinyl' 
+                                        style={{textDecoration: 'none', textTransform: 'capitalize'}}
+                                    >vinyl</Link>
                                 </li>
                             </ul>
                         </nav>

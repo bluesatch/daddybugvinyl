@@ -1,0 +1,18 @@
+* { box-sizing: border-box;}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header, .footer {
+    padding: 20px 0;
+}
+
+.branding {
+    text-decoration: none;
+}
+
+.main {
+    padding: 60px 0;
+}

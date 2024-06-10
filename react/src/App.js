@@ -12,11 +12,25 @@ import Store from './components/Store'
 const App =()=> {
 
     const [ albums, setAlbums ] = useState([])
+    const [ apparel, setApparel ] = useState([])
+    const [ candles, setCandles] = useState([])
 
     useEffect(()=> {
         const url = 'http://localhost:3005/api/album'
 
         axios.get(url).then(res => setAlbums(res.data))
+    }, [])
+
+    useEffect(()=> {
+        const url = 'http://localhost:3005/api/apparel'
+
+        axios.get(url).then(res => setApparel(res.data))
+    }, [])
+
+    useEffect(()=> {
+        const url = 'http://localhost:3005/api/candle'
+
+        axios.get(url).then(res => setCandles(res.data))
     }, [])
 
     return(
@@ -26,11 +40,17 @@ const App =()=> {
                 <Route path='/' element={ <Home />} />
                 <Route path="/about" element={ <About />} />
                 <Route path="/store" element={ <Store />} />
-                <Route path="/apparel" element={ <Store />} />
-                <Route path="/candle" element={ <Store />} />
+                <Route path="/apparel" element={ 
+                    <Store products={apparel} heading={'Apparel'} 
+                    />} 
+                />
+                <Route path="/candle" element={ 
+                    <Store products={candles} heading={'Candles'} 
+                    />}     
+                />
                 <Route path="/vinyl" element={ 
-                    <Store products={ albums }/>
-                    } 
+                    <Store products={ albums } heading={'Vinyl'} 
+                    />} 
                 />
             </Routes>
             <Footer />

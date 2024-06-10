@@ -1,9 +1,13 @@
-const Store =({ products })=> {
+const Store =({ products, heading })=> {
 
     console.log(products)
 
     return (
-        <h1>store</h1>
+        <main className="main" id="storeMain">
+            <div className="container">
+                <h2>{heading ? heading : 'Our Store'}</h2>
+            </div>
+        </main>
     )
 }
 

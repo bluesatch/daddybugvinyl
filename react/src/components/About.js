@@ -1,7 +1,11 @@
 const About =()=> {
 
     return (
-        <h1>About</h1>
+        <main className="main" id="aboutMain">
+            <div className="container">
+                <h1>About</h1>
+            </div>
+        </main>
     )
 }
 
