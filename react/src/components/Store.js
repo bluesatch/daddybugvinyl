@@ -1,5 +1,5 @@
-import AlbumCard from "./AlbumCard"
-import ProductCard from "./ProductCard,js"
+
+import Card from "./Card.js"
 const Store =({ products, heading })=> {
 
     console.log(products)
@@ -16,21 +16,38 @@ const Store =({ products, heading })=> {
                 let artist = product.band !== null ? product.band 
                     : product.alias !== null ? product.alias 
                     : `${product.firstName} ${product.lastName}`
-                return <AlbumCard 
+                return <Card 
                             key={product.album_id} 
                             id={product.album_id}
+                            productType={'album'}
                             productName={product.title}
                             price={product.price}
-                            artist={artist}
+                            detail={artist}
                             imgUrl={product.imgUrl}
                         />
                 })
         } else if (products[i].product_id == 1) {
             productArr.push(products[i])
             cardComponents = products.map(product => {
-                return <ProductCard 
+                return <Card 
                             key={product.apparel_id}
+                            id={product.apparel_id}
+                            productType={'apparel'}
                             productName={product.apparel}
+                            detail={`Size: ${product.size}`}
+                            price={product.price}
+                            imgUrl={product.imgUrl}
+                        />
+            })
+        } else if (products[i].product_id == 2) {
+            productArr.push(products[i])
+            cardComponents = products.map(product => {
+                return <Card 
+                            key={product.candle_id}
+                            id={product.candle_id}
+                            productType={'candle'}
+                            productName={product.candle}
+                            detail={`${product.size} oz`}
                             price={product.price}
                             imgUrl={product.imgUrl}
                         />

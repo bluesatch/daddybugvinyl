@@ -16,3 +16,7 @@ body {
 .main {
     padding: 60px 0;
 }
+
+.product-name {
+    font-size: calc(10px + (22 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
