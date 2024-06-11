@@ -11,7 +11,6 @@ const AlbumCard =(props)=> {
                 </div>
                 <footer className="card-footer">
                     <button className="btn btn-primary cart-btns text-capitalize">add to cart</button>
-                    <button>Click me!</button>
                 </footer>
             </div>
         </div>
