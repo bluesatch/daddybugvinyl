@@ -2,7 +2,7 @@
 import Card from "./Card.js"
 const Store =({ products, heading })=> {
 
-    console.log(products)
+    // console.log(products)
 
     let productArr = []
 
@@ -19,7 +19,7 @@ const Store =({ products, heading })=> {
                 return <Card 
                             key={product.album_id} 
                             id={product.album_id}
-                            productType={'album'}
+                            endpoint={'vinyl'}
                             productName={product.title}
                             price={product.price}
                             detail={artist}
@@ -32,7 +32,7 @@ const Store =({ products, heading })=> {
                 return <Card 
                             key={product.apparel_id}
                             id={product.apparel_id}
-                            productType={'apparel'}
+                            endpoint={'apparel'}
                             productName={product.apparel}
                             detail={`Size: ${product.size}`}
                             price={product.price}
@@ -45,7 +45,7 @@ const Store =({ products, heading })=> {
                 return <Card 
                             key={product.candle_id}
                             id={product.candle_id}
-                            productType={'candle'}
+                            endpoint={'candle'}
                             productName={product.candle}
                             detail={`${product.size} oz`}
                             price={product.price}
