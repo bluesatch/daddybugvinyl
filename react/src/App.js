@@ -8,6 +8,7 @@ import Home from "./components/Home"
 import About from './components/About'
 import Store from './components/Store'
 import AlbumSingle from './components/AlbumSingle'
+import ProductSingle from './components/ProductSingle'
 import Error404 from './components/Error404'
 
 
@@ -54,6 +55,7 @@ const App =()=> {
                     />} 
                 />
                 <Route path="/vinyl/:id" element={ <AlbumSingle />} />
+                <Route path="/:endpoint/:id" element={<ProductSingle />} />
                 <Route path="*" element={ <Error404 />} />
             </Routes>
             <Footer />

@@ -6,7 +6,6 @@ const AlbumSingle =()=> {
 
     const [ album, setAlbum ] = useState({})
     const [ artist, setArtist ] = useState('')
-    const [ price, setPrice ] = useState(0)
     const params = useParams()
 
     const url = `http://localhost:3005/api/album/${params.id}`
@@ -18,7 +17,6 @@ const AlbumSingle =()=> {
             : album.alias !== null ? album.alias 
             : `${album.firstName} ${album.lastName}`)
 
-        setPrice(album.price)
     }, [])
 
     console.log(album)
