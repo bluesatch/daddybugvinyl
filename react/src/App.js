@@ -10,7 +10,7 @@ import Store from './components/Store'
 import AlbumSingle from './components/AlbumSingle'
 import ProductSingle from './components/ProductSingle'
 import Error404 from './components/Error404'
-
+import Genre from './components/Genre'
 
 const App =()=> {
 
@@ -39,25 +39,34 @@ const App =()=> {
     return(
         <>
             <Header />
-            <Routes>
-                <Route path='/' element={ <Home />} />
-                <Route path="/about" element={ <About />} />
-                <Route path="/apparel" element={ 
-                    <Store products={apparel} heading={'Apparel'} 
-                    />} 
-                />
-                <Route path="/candle" element={ 
-                    <Store products={candles} heading={'Candles'} 
-                    />}     
-                />
-                <Route path="/vinyl" element={ 
-                    <Store products={ albums } heading={'Vinyl'} 
-                    />} 
-                />
-                <Route path="/vinyl/:id" element={ <AlbumSingle />} />
-                <Route path="/:endpoint/:id" element={<ProductSingle />} />
-                <Route path="*" element={ <Error404 />} />
-            </Routes>
+            <div className="container">
+                <div className="row">
+                    <div className="col-10">
+                        <Routes>
+                            <Route path='/' element={ <Home />} />
+                            <Route path="/about" element={ <About />} />
+                            <Route path="/apparel" element={ 
+                                <Store products={ apparel } heading={ 'Apparel' } 
+                                />} 
+                            />
+                            <Route path="/candle" element={ 
+                                <Store products={ candles } heading={ 'Candles' } 
+                                />}     
+                            />
+                            <Route path="/vinyl" element={ 
+                                <Store products={ albums } heading={ 'Vinyl' } 
+                                />} 
+                            />
+                            <Route path="/vinyl/:id" element={ <AlbumSingle />} />
+                            <Route path="/:endpoint/:id" element={ <ProductSingle />} />
+                            <Route path="*" element={ <Error404 /> } />
+                        </Routes>
+                    </div>
+                    <div className="col-2">
+                        <Genre />
+                    </div>
+                </div>
+            </div>
             <Footer />
         </>
     )

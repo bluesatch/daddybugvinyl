@@ -5,21 +5,15 @@ import axios from "axios"
 const AlbumSingle =()=> {
 
     const [ album, setAlbum ] = useState({})
-    const [ artist, setArtist ] = useState('')
     const params = useParams()
 
     const url = `http://localhost:3005/api/album/${params.id}`
 
     useEffect(()=> {
         axios.get(url).then(res => setAlbum(res.data))
-
-        setArtist(album.band !== null ? album.band 
-            : album.alias !== null ? album.alias 
-            : `${album.firstName} ${album.lastName}`)
-
     }, [])
 
-    console.log(album)
+    // console.log(album)
 
     return (
         <main className="main" id="albumSingleMain">
@@ -31,14 +25,13 @@ const AlbumSingle =()=> {
                     </div>
                     <div className="col-md-6">
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item text-capitalize">Artist/Band: {artist}</li>
-                            <li className="list-group-item text-capitalize">serial no. {album.serial_no}</li>
+                            <li className="list-group-item text-capitalize">Artist/Band: {album.band || album.alias || `${album.firstName} ${album.lastName}`}</li>
+                            <li className="list-group-item text-capitalize">serial: {album.serial_no}</li>
                             <li className="list-group-item text-capitalize">Label: {album.label}</li>
                             <li className="list-group-item text-uppercase">{album.speed} {album.size} {album.sound}</li>
                             <li className="list-group-item text-capitalize">year released: {album.yr_released}</li>
                             <li className="list-group-item">${album.price} USD</li>
                             <li className="list-group-item text-capitalize">store rating: {album.rating}/5</li>
-
                         </ul>
                     </div>
                 </div>
