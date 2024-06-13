@@ -54,7 +54,8 @@ const Header =()=> {
                         </nav>
                     </div>
                     <div className="col-md-3">
-                        <p className="text-end signin">sign in | create account</p>
+                        <p className="text-end signin">sign in </p> 
+                        <Link to='/createAccount'>create account</Link>
                     </div>
                 </div>
             </div>

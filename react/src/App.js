@@ -11,6 +11,8 @@ import AlbumSingle from './components/AlbumSingle'
 import ProductSingle from './components/ProductSingle'
 import Error404 from './components/Error404'
 import Genre from './components/Genre'
+import GenreSingle from './components/GenreSingle'
+import CreateAccount from './components/CreateAccount'
 
 const App =()=> {
 
@@ -53,6 +55,8 @@ const App =()=> {
                                 <Store products={ candles } heading={ 'Candles' } 
                                 />}     
                             />
+                            <Route path='/createAccount' element={ <CreateAccount />} />
+                            <Route path='/genre/:id' element={ <GenreSingle />} />
                             <Route path="/vinyl" element={ 
                                 <Store products={ albums } heading={ 'Vinyl' } 
                                 />} 

@@ -19,7 +19,7 @@ const Home =()=> {
         })
     }, [today])
 
-    console.log(featuredAlbum)
+    // console.log(featuredAlbum)
 
     return (
         <main className="main" id="main">

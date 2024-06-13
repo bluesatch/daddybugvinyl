@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Genre =()=> {
@@ -11,9 +12,13 @@ const Genre =()=> {
         axios.get(url).then(res => setGenres(res.data))
     }, [])
 
-    console.log(genres)
+    // console.log(genres)
     const genreItems = genres.map(genre => {
-        return <li className="list-group-item">{genre.genre}</li>
+        return <li key={genre.genre_id }className="list-group-item">
+                    <Link to={`/genre/${genre.genre_id}`}>
+                        {genre.genre}
+                    </Link>
+                </li>
     })
 
     return (

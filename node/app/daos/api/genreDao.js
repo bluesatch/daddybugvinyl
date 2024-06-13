@@ -7,7 +7,7 @@ const genreDao = {
         const id = req.params.id
 
         con.execute(
-            `SELECT al.album_id, al.title, al.yr_released, al.imgUrl,
+            `SELECT al.album_id, al.title, al.yr_released, al.imgUrl, al.price,
             ar.firstName, ar.lastName, ar.alias, ar.band, ar.artist_id, g.genre
             FROM album al 
             JOIN artist ar USING (artist_id)
