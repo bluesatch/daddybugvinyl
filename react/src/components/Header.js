@@ -55,7 +55,7 @@ const Header =()=> {
                     </div>
                     <div className="col-md-3">
                         <p className="text-end signin">sign in </p> 
-                        <Link to='/createAccount'>create account</Link>
+                        <Link to='/createAccount'>join the loveliness</Link>
                     </div>
                 </div>
             </div>

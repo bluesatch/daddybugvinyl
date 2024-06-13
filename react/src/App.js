@@ -16,9 +16,25 @@ import CreateAccount from './components/CreateAccount'
 
 const App =()=> {
 
+    /**
+     * Initialize state
+     */
+
     const [ albums, setAlbums ] = useState([])
     const [ apparel, setApparel ] = useState([])
     const [ candles, setCandles] = useState([])
+    const [ users, setUsers ] = useState([])
+    const [ formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        password: ''
+    })
+
+    /**
+     * fetch calls
+     */
 
     useEffect(()=> {
         const url = 'http://localhost:3005/api/album'
@@ -38,6 +54,38 @@ const App =()=> {
         axios.get(url).then(res => setCandles(res.data))
     }, [])
 
+    
+
+    /**
+     * form functionality 
+     */
+    const handleChange =(event)=> {
+
+        const { name, value } = event.target
+
+        setFormData(prevState => {
+            return {
+                ...prevState,
+                [name]: value
+            }
+        })
+    }
+
+    const handleSubmit =()=> {
+
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+
+        if(regex.test(formData.password) === false) {
+            alert('Password not valid.\nMust contain:\n-one uppercase letter\n-one lowercase letter\n-one number\n-one special character\n-at leaset 8 charcters')
+        } else {
+            axios({
+                method: 'post',
+                url: 'http://localhost:3005/api/user/create',
+                data: formData
+            })
+        }
+    }
+
     return(
         <>
             <Header />
@@ -55,7 +103,14 @@ const App =()=> {
                                 <Store products={ candles } heading={ 'Candles' } 
                                 />}     
                             />
-                            <Route path='/createAccount' element={ <CreateAccount />} />
+                            <Route
+                                path='/createAccount' 
+                                element={ <CreateAccount 
+                                            formData={formData}
+                                            handleChange={handleChange}
+                                            handleSubmit={handleSubmit} 
+                                        />} 
+                            />
                             <Route path='/genre/:id' element={ <GenreSingle />} />
                             <Route path="/vinyl" element={ 
                                 <Store products={ albums } heading={ 'Vinyl' } 

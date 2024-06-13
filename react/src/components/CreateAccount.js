@@ -1,20 +1,12 @@
-import { useState, useEffect } from "react"
 
-const CreateAccount =()=> {
+const CreateAccount =({ formData, handleChange, handleSubmit })=> {
 
-    const [ formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        password: ''
-    })
 
     return (
         <main className="main" id="createAcctMain">
             <div className="container">
                 <h2 className="text-capitalize text-danger">create an account</h2>
-                <form className="create-accounnt">
+                <form className="create-accounnt" onSubmit={handleSubmit}>
                     <div className="form-floating mb-3">
                         <input 
                             type="text"
@@ -22,6 +14,7 @@ const CreateAccount =()=> {
                             id="firstName"
                             name="firstName"
                             value={formData.firstName}
+                            onChange={handleChange}
                             required
                         />
                         <label htmlFor="firstName">First</label>
@@ -33,6 +26,7 @@ const CreateAccount =()=> {
                             id="lastName"
                             name="lastName"
                             value={formData.lastName}
+                            onChange={handleChange}
                             required
                         />
                         <label htmlFor="lastName">Last</label>
@@ -44,6 +38,7 @@ const CreateAccount =()=> {
                             id="email"
                             name="email"
                             value={formData.email}
+                            onChange={handleChange}
                             required
                         />
                         <label htmlFor="email">Email</label>
@@ -55,6 +50,7 @@ const CreateAccount =()=> {
                             id="phone"
                             name="phone"
                             value={formData.phone}
+                            onChange={handleChange}
                             required
                         />
                         <label htmlFor="phone">Phone</label>
@@ -66,9 +62,13 @@ const CreateAccount =()=> {
                             id="password"
                             name="password"
                             value={formData.password}
+                            onChange={handleChange}
                             required
                         />
-                        <label htmlFor="password">password</label>
+                        <label htmlFor="password">Password: (Must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character, & 8 characters) </label>
+                    </div>
+                    <div className="mb-3 button-div">
+                        <button className="btn btn-danger">Submit</button>
                     </div>
                 </form>
             </div>
