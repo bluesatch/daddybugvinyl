@@ -54,8 +54,16 @@ const Header =()=> {
                         </nav>
                     </div>
                     <div className="col-md-3">
-                        <p className="text-end signin">sign in </p> 
-                        <Link to='/createAccount'>join the loveliness</Link>
+                        <Link 
+                            to='/login'
+                            style={{textDecoration: 'none', marginRight: '20px', textTransform: 'capitalize'}}>
+                            sign in
+                        </Link>
+                        <Link 
+                            to='/createAccount'
+                            style={{textDecoration: 'none', marginRight: 'auto', textTransform: 'capitalize'}}>
+                            join the loveliness
+                        </Link>
                     </div>
                 </div>
             </div>

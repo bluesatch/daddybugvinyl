@@ -6,7 +6,7 @@ const CreateAccount =({ formData, handleChange, handleSubmit })=> {
         <main className="main" id="createAcctMain">
             <div className="container">
                 <h2 className="text-capitalize text-danger">create an account</h2>
-                <form className="create-accounnt" onSubmit={handleSubmit}>
+                <form className="create-account" onSubmit={handleSubmit}>
                     <div className="form-floating mb-3">
                         <input 
                             type="text"

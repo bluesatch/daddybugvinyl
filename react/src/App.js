@@ -13,6 +13,7 @@ import Error404 from './components/Error404'
 import Genre from './components/Genre'
 import GenreSingle from './components/GenreSingle'
 import CreateAccount from './components/CreateAccount'
+import Login from './components/Login'
 
 const App =()=> {
 
@@ -52,6 +53,12 @@ const App =()=> {
         const url = 'http://localhost:3005/api/candle'
 
         axios.get(url).then(res => setCandles(res.data))
+    }, [])
+
+    useEffect(()=> {
+        const url = 'http://localhost:3005/api/user'
+
+        axios.get(url).then(res => setUsers(res.data))
     }, [])
 
     
@@ -112,6 +119,7 @@ const App =()=> {
                                         />} 
                             />
                             <Route path='/genre/:id' element={ <GenreSingle />} />
+                            <Route path='/login' element={ <Login users={users} />} />
                             <Route path="/vinyl" element={ 
                                 <Store products={ albums } heading={ 'Vinyl' } 
                                 />} 
